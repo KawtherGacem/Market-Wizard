@@ -6,12 +6,15 @@ import app.utils.NameHolder;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Supplier;
@@ -21,12 +24,14 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class SelectSupplierController implements Initializable {
     @FXML public Button newBtn;
     @FXML public Button cancelBtn;
     @FXML public Button confirmBtn;
+    @FXML public TextField searchTextField;
     @FXML public TableView<Supplier> suppliersTableView;
     @FXML public TableColumn<Supplier, String> supplierNameCol;
     @FXML public TableColumn<Supplier, String> wilayaCol;
@@ -40,6 +45,32 @@ public class SelectSupplierController implements Initializable {
         phoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("PhoneNumber"));
         wilayaCol.setCellValueFactory(new PropertyValueFactory<>("Wilaya"));
         suppliersTableView.setItems(getSuppliers());
+
+        FilteredList<Supplier> supplierFilteredList = new FilteredList<>(getSuppliers(), b -> true);
+        searchTextField.textProperty().addListener((observable,oldValue,newValue) -> {
+                supplierFilteredList.setPredicate(supplier -> {
+                    if (newValue==null || newValue.isEmpty()) {
+                        return true;
+                    }
+                    String lowerCaseFilter = newValue.toLowerCase();
+
+                    if (supplier.getSupplierName().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                        return true;
+                    }
+                    else  if (supplier.getPhoneNumber().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                        return true;
+                    } else  if (supplier.getWilaya().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                        return true;
+                    }
+                    else return false;
+                });
+            });
+        SortedList<Supplier> supplierSortedList = new SortedList<>(supplierFilteredList);
+
+        supplierSortedList.comparatorProperty().bind(suppliersTableView.comparatorProperty());
+
+        suppliersTableView.setItems(supplierSortedList);
+
     }
 
     public void updateSuppliers(){
