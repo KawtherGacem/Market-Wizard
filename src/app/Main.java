@@ -13,12 +13,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/purchase-entry.fxml"));
-        primaryStage.setTitle("Purchase Entry");
+        Parent root = FXMLLoader.load(getClass().getResource("../view/Login/login.fxml"));
+        primaryStage.setTitle("Market Wizard");
 
         Platform.runLater(root::requestFocus);
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,1280,679);
         scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {

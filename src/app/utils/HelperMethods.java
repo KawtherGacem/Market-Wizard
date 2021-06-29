@@ -45,7 +45,7 @@ public class HelperMethods {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(String.valueOf("infoMessage"));
         alert.setTitle("title");
-        alert.setHeaderText("headerText");
+        alert.setHeaderText("fill in all the gaps you idiot");
         alert.initOwner(window);
         alert.showAndWait();
     }

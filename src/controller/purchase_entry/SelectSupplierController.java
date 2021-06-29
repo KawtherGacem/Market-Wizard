@@ -77,8 +77,8 @@ public class SelectSupplierController implements Initializable {
     }
 
     public void newSupplierOnClick(ActionEvent actionEvent) throws IOException {
-        Stage window = HelperMethods.openWindow("add-supplier.fxml",
-                "Add New Supplier");
+        Stage window = HelperMethods.openWindow("Purchase_Entry/add-supplier.fxml",
+                "what is iiit??");
         window.setOnHidden((e) -> {
             updateSuppliers();
         });

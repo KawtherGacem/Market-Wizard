@@ -30,7 +30,7 @@ public class AddInvoiceController {
                 "VALUES (?, ?)";
         try(PreparedStatement pstm = c.prepareStatement(sqlQuery)){
             pstm.setString(1, supplier);
-            pstm.setString(2, dateOfPurchase);
+               pstm.setString(2, dateOfPurchase);
             pstm.execute();
         }
         catch (SQLException e){
@@ -41,17 +41,16 @@ public class AddInvoiceController {
 
     public boolean validateFields(){
         if (dateOfPurchaseDatePicker.getValue() == null ||
-                selectedSupplierLabel.getText().equals("Label")){
+                selectedSupplierLabel.getText().equals("Label")) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
 
     public void selectOnClick(ActionEvent actionEvent) throws IOException {
-        Stage window = HelperMethods.openWindow("select-supplier.fxml",
-                "Something");
+        Stage window = HelperMethods.openWindow("Purchase_Entry/select-supplier.fxml",
+                "marcello");
         window.setOnHidden((e) ->{
             selectedSupplierLabel.setText(NameHolder.supplierName);
         });

@@ -75,7 +75,7 @@ public class SelectProductController implements Initializable {
     }
 
     public void newProductOnClick(ActionEvent actionEvent) throws IOException {
-        Stage window = HelperMethods.openWindow("add-product.fxml",
+        Stage window = HelperMethods.openWindow("Purchase_Entry/add-product.fxml",
                 "Add New Product");
         window.setOnHidden((e) -> {
             updateProducts();
