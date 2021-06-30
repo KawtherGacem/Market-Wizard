@@ -1,4 +1,4 @@
-package controller.customers;
+package controller.credits;
 
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -22,28 +22,17 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class CustomersController implements Initializable {
+public class CreditsController implements Initializable {
     //    slide menu items
-    @FXML public Circle imageCircle ;
+    @FXML
+    public Circle imageCircle ;
 
     @FXML public Pane openSliderPane;
     @FXML public Pane closeSliderPane;
     @FXML public ImageView openSliderImage;
     @FXML public AnchorPane slider;
     @FXML public AnchorPane x;
-//    slide menu items
-
-    //    dashboard   //
-//    @FXML public Button dashboardBtn;
-//    @FXML public Button sellingBtn;
-//    @FXML public Button stockBtn;
-//    @FXML public Button suppliersBtn;
-//    @FXML public Button billsBtn;
-//
-    public Stage stage ;
-    public Scene scene ;
-    public Parent root;
-//    dashboard   //
+    //    slide menu items
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -125,56 +114,8 @@ public class CustomersController implements Initializable {
 
 
     }
-    //  dashboard   //
-    public void dashboardOnClick(ActionEvent actionEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../../view/Dashboard/dashboard.fxml"));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,1280,679);
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void sellingOnClick(ActionEvent actionEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../../view/Selling_Entry/selling-entry.fxml"));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,1280,679);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void stockOnClick(ActionEvent actionEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../../view/Stock/stock.fxml"));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,1280,679);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void billsOnClick(ActionEvent actionEvent) throws Exception{
-        root = FXMLLoader.load(getClass().getResource("../../view/Purchase_Entry/purchase-entry.fxml"));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,1280,679);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void customersOnClick(ActionEvent actionEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../../view/Customers/customers.fxml"));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,1280,679);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void suppliersOnClick(ActionEvent actionEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../../view/Suppliers/suppliers.fxml"));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,1280,679);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-//  dashboard   //
-
-    //          SLIDER BUTTONS              //
+//          SLIDER BUTTONS              //
 
     public void logOutOnClick(ActionEvent event) throws IOException {
         Alert alert =new Alert(Alert.AlertType.CONFIRMATION);

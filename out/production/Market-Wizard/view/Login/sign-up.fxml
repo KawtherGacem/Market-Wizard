@@ -55,7 +55,7 @@
                         </PasswordField>
                                 <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="352.0" prefHeight="30.0" textAlignment="CENTER" textFill="#ff000094">
                                     <font>
-                                        <Font name="System Bold" size="18.0" />
+                                        <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
                                 <Button fx:id="signUpBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#signUpOnClick" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: white; -fx-background-radius: 18px;" text="Sign up" textFill="#23b883">
@@ -167,14 +167,6 @@
                         </Pane>
                         <VBox layoutX="67.0" layoutY="285.0" prefHeight="250.0" prefWidth="168.0" spacing="20.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="288.0">
                             <children>
-                                <Button fx:id="creditsBtn" mnemonicParsing="false" onAction="#creditsOnClick" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Credits">
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                </Button>
                                 <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exitOnClick" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Exit">
                                     <font>
                                         <Font size="22.0" />

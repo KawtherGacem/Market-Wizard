@@ -10,10 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -29,6 +26,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import static javafx.scene.paint.Color.*;
@@ -146,9 +144,17 @@ public class LoginController implements Initializable {
 
     }
 
-    public void exitOnClick(ActionEvent event){
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.close();
+    public void exitOnClick(ActionEvent event) {
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm exit");
+        alert.setHeaderText(null);
+        alert.setContentText("Do you really want to exit?");
+        Optional<ButtonType> action =alert.showAndWait();
+
+        if (action.get()==ButtonType.OK){
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.close();
+        }
     }
 
     //                      SLIDER BUTTONS                  //
@@ -170,7 +176,7 @@ public class LoginController implements Initializable {
         String password = passwordTextField.getText();
         if(username.isEmpty() || password.isEmpty()) {
             errorLabel.setText("Empty credentials");
-            errorLabel.setTextFill(BLUE);
+            errorLabel.setTextFill(RED);
             status = "Error";
         } else {
             String sql = "SELECT * FROM users Where username = ? and password = ?";
@@ -181,7 +187,7 @@ public class LoginController implements Initializable {
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (!resultSet.next()) {
                     errorLabel.setText("Enter correct username/password");
-                    errorLabel.setTextFill(BLUE);
+                    errorLabel.setTextFill(RED);
                     status = "Error";
                 } else {
                     errorLabel.setText("Login Successful..Redirecting..");

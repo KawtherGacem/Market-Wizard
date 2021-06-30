@@ -41,29 +41,14 @@
                         </font>
                     </Button>
                     <AnchorPane layoutX="125.0" layoutY="30.0" prefHeight="45.0" prefWidth="926.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="316.0" AnchorPane.topAnchor="30.0" />
-                    <HBox layoutX="84.0" layoutY="30.0" maxHeight="46.0" prefHeight="46.0" prefWidth="1004.0" spacing="45.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="30.0">
+                    <HBox layoutX="84.0" layoutY="30.0" maxHeight="46.0" prefHeight="46.0" prefWidth="1004.0" spacing="50.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="30.0">
                         <children>
-                            <TextField prefHeight="44.0" prefWidth="165.0" promptText="Supplier" style="-fx-background-color: #EBEBEB; -fx-prompt-text-fill: #676767; -fx-border-color: #23B883;">
-                                <font>
-                                    <Font size="19.0" />
-                                </font>
-                            </TextField>
-                            <TextField prefHeight="44.0" prefWidth="165.0" promptText="Number" style="-fx-background-color: #EBEBEB; -fx-prompt-text-fill: #676767; -fx-border-color: #23B883;">
-                                <font>
-                                    <Font size="19.0" />
-                                </font>
-                            </TextField>
-                            <TextField prefHeight="44.0" prefWidth="165.0" promptText="Adress" style="-fx-background-color: #EBEBEB; -fx-prompt-text-fill: #676767; -fx-border-color: #23B883;">
-                                <font>
-                                    <Font size="19.0" />
-                                </font>
-                            </TextField>
-                            <TextField prefHeight="44.0" prefWidth="165.0" promptText="Product" style="-fx-background-color: #EBEBEB; -fx-prompt-text-fill: #676767; -fx-border-color: #23B883;">
-                                <font>
-                                    <Font size="19.0" />
-                                </font>
-                            </TextField>
-                            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="240.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Search" textFill="WHITE">
+                        <TextField prefHeight="44.0" prefWidth="750.0" promptText="Search supplier" style="-fx-background-color: #EBEBEB; -fx-border-color: #23B883;">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Search" textFill="WHITE">
                                 <font>
                                     <Font size="20.0" />
                                 </font>
@@ -76,17 +61,43 @@
                             </Button>
                         </children>
                     </HBox>
-                    <Button layoutX="490.0" layoutY="552.0" maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="240.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Add new supplier" textFill="WHITE" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="550.0">
-                        <font>
-                            <Font size="20.0" />
-                        </font>
-                        <padding>
-                            <Insets bottom="2.0" />
-                        </padding>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                    </Button>
+                  <HBox layoutX="250.0" layoutY="500.0" prefHeight="46.0" prefWidth="1004.0" spacing="125.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="550.0">
+                     <children>
+                          <Button maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Add new supplier" textFill="WHITE">
+                              <font>
+                                  <Font size="20.0" />
+                              </font>
+                              <padding>
+                                  <Insets bottom="2.0" />
+                              </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                          </Button>
+                        <Button maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Edit supplier" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Delete supplier" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="2.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
                 </children>
                <BorderPane.margin>
                   <Insets left="-255.0" />
@@ -193,11 +204,11 @@
                     </BorderPane.margin></AnchorPane>
             </top>
             <left>
-                <AnchorPane fx:id="slider" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="655.0" prefWidth="295.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 0px 0px 100px 0px;" BorderPane.alignment="BOTTOM_LEFT">
+                <AnchorPane fx:id="slider" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="655.0" prefWidth="295.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 0px 0px 100px 0px;" visible="false" BorderPane.alignment="BOTTOM_LEFT">
                     <children>
                         <VBox layoutX="-2.0" layoutY="3.0" maxHeight="264.0" maxWidth="295.0" minHeight="200.0" prefHeight="264.0" prefWidth="295.0" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Pane prefHeight="24.0" prefWidth="295.0" style="-fx-background-color: #23b883;">
+                                <Pane prefHeight="24.0" prefWidth="295.0" style="-fx-background-color: #23B883;">
                                     <VBox.margin>
                                         <Insets top="-24.0" />
                                     </VBox.margin>
@@ -262,7 +273,7 @@
                         </Pane>
                         <VBox layoutX="67.0" layoutY="285.0" prefHeight="250.0" prefWidth="168.0" spacing="20.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="288.0">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Credits">
+                                <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#homeOnClick" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Home">
                                     <font>
                                         <Font size="22.0" />
                                     </font>
@@ -270,7 +281,7 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Users">
+                                <Button fx:id="creditsBtn" mnemonicParsing="false" onAction="#creditsOnClick" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Credits">
                                     <font>
                                         <Font size="22.0" />
                                     </font>
@@ -278,7 +289,7 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Log out">
+                                <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#logOutOnClick" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Log out">
                                     <font>
                                         <Font size="22.0" />
                                     </font>
@@ -286,7 +297,7 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Exit">
+                                <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exitOnClick" prefHeight="37.0" prefWidth="168.0" style="-fx-background-color: #0A6B49; -fx-text-fill: white; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: white;" text="Exit">
                                     <font>
                                         <Font size="22.0" />
                                     </font>
