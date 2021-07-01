@@ -1,4 +1,4 @@
-package controller.purchase_entry;
+package controller.stock;
 
 
 import app.utils.DBUtils;
@@ -15,7 +15,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 
-public class AddProductController {
+import static app.utils.HelperMethods.isNumeric;
+
+public class AddNewProductController {
     @FXML public DatePicker expirationDatePicker;
     @FXML public TextField purchasedPriceTextField;
     @FXML public TextField soldPriceTextField;
@@ -24,16 +26,16 @@ public class AddProductController {
     @FXML public TextField productNameTextField;
     @FXML public Button confirmBtn;
     @FXML public Button cancelBtn;
-    final Connection c = DBUtils.getConnection();
 
 
     public void addProduct(String productName, double purchasedPrice,
                            double soldPrice, int quantity, String category,
                            String expirationDate){
-        String sqlQuery = "INSERT INTO products (name, purchased_price, sold_price," +
+        String sqlQuery = "INSERT INTO products (product_name, purchased_price, sold_price," +
                 "quantity, category, expiration_date)" +
                 "VALUES (?, ?, ?, ?, ?, ?)";
-        try(PreparedStatement pstm = c.prepareStatement(sqlQuery)){
+        try(Connection c = DBUtils.getConnection();
+            PreparedStatement pstm = c.prepareStatement(sqlQuery)){
             pstm.setString(1, productName);
             pstm.setDouble(2, purchasedPrice);
             pstm.setDouble(3, soldPrice);
@@ -59,11 +61,13 @@ public class AddProductController {
                 soldPrice != null && !soldPrice.isEmpty() &&
                 quantity != null && !quantity.isEmpty() &&
                 category != null && !category.isEmpty() &&
-                productName != null && !productName.isEmpty();
+                productName != null && !productName.isEmpty() &&
+                isNumeric(purchasedPrice) && isNumeric(quantity) &&
+                isNumeric(soldPrice);
     }
 
 
-    public void confirmOnClick(ActionEvent actionEvent) {
+    public void confirmOnClick(ActionEvent actionEvent){
         if (validateFields()){
             addProduct(productNameTextField.getText(),
                     Double.parseDouble(purchasedPriceTextField.getText()),
@@ -71,8 +75,7 @@ public class AddProductController {
                     Integer.parseInt(quantityTextField.getText()),
                     categoryTextField.getText(), expirationDatePicker.getValue().
                             format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-            Stage window = (Stage) cancelBtn.getScene().getWindow();
-            window.close();
+            ((Stage) cancelBtn.getScene().getWindow()).close();
         }
         else {
             HelperMethods.invalidFieldsAlert((Stage) cancelBtn.getScene().getWindow());
@@ -80,7 +83,6 @@ public class AddProductController {
     }
 
     public void cancelOnClick(ActionEvent actionEvent) {
-        Stage window = (Stage) cancelBtn.getScene().getWindow();
-        window.close();
+        ((Stage) cancelBtn.getScene().getWindow()).close();
     }
 }

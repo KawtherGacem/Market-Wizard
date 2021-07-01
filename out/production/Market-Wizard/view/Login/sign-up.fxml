@@ -55,7 +55,7 @@
                         </PasswordField>
                                 <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="352.0" prefHeight="30.0" textAlignment="CENTER" textFill="#ff000094">
                                     <font>
-                                        <Font name="System Bold" size="14.0" />
+                                        <Font name="System Bold" size="12.0" />
                                     </font>
                                 </Label>
                                 <Button fx:id="signUpBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#signUpOnClick" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: white; -fx-background-radius: 18px;" text="Sign up" textFill="#23b883">

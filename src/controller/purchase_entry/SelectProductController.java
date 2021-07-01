@@ -58,13 +58,14 @@ public class SelectProductController implements Initializable {
             Product product;
 
             while(rs.next()){
-                product = new Product(rs.getInt("id"),
-                        rs.getString("name"),
+                product = new Product(rs.getInt("product_id"),
+                        rs.getString("product_name"),
                         rs.getDouble("purchased_price"),
                         rs.getDouble("sold_price"),
                         rs.getString("expiration_date"),
                         rs.getString("category"),
-                        rs.getInt("quantity"));
+                        rs.getInt("quantity"),
+                        rs.getInt("quantity") * rs.getDouble("purchased_price"));
 
                 list.add(product);
             }

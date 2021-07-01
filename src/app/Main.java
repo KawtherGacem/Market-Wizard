@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/Login/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/Stock/stock.fxml"));
         primaryStage.setTitle("Market Wizard");
 
         Platform.runLater(root::requestFocus);

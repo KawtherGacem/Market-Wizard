@@ -59,8 +59,6 @@ public class SelectSupplierController implements Initializable {
                     }
                     else  if (supplier.getPhoneNumber().toLowerCase().indexOf(lowerCaseFilter) != -1){
                         return true;
-                    } else  if (supplier.getWilaya().toLowerCase().indexOf(lowerCaseFilter) != -1){
-                        return true;
                     }
                     else return false;
                 });
@@ -89,11 +87,12 @@ public class SelectSupplierController implements Initializable {
             Supplier supplier;
 
             while(rs.next()){
-                supplier = new Supplier(rs.getInt("id"),
+                supplier = new Supplier(rs.getInt("supplier_id"),
                         rs.getString("supplier_name"),
                         rs.getString("phone_number"),
-                        rs.getString("wilaya"));
-
+                        rs.getString("address"),
+                        rs.getString("nis"),
+                        rs.getString("nif"));
                 list.add(supplier);
             }
         }catch (Exception ex){
@@ -118,8 +117,7 @@ public class SelectSupplierController implements Initializable {
 
     public void confirmOnClick(ActionEvent actionEvent) {
         NameHolder.supplierName = suppliersTableView.
-                getSelectionModel().getSelectedItem().supplierName;
-        Stage window = (Stage) confirmBtn.getScene().getWindow();
-        window.close();
+                getSelectionModel().getSelectedItem().getSupplierName();
+        ((Stage) cancelBtn.getScene().getWindow()).close();
     }
 }

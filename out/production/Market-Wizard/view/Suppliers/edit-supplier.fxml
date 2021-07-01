@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="525.0" prefWidth="436.0" style="-fx-border-color: #23B883; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.purchase_entry.AddSupplierController">
+<AnchorPane prefHeight="525.0" prefWidth="436.0" style="-fx-border-color: #23B883; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.suppliers.EditSupplierController">
    <children>
-      <Label layoutX="107.0" layoutY="29.0" prefHeight="38.0" prefWidth="233.0" text="New Supplier" textFill="#0a6b49" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="29.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="29.0" prefHeight="38.0" prefWidth="233.0" text="Edit Supplier" textFill="#0a6b49" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="29.0">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>

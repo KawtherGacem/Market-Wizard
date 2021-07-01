@@ -21,21 +21,30 @@
             <center>
                 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="1240.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" fx:id="x">
                     <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="655.0" layoutY="72.0" text="Credits" textAlignment="CENTER" textFill="#23b883" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="30.0">
-                     <font>
-                        <Font name="System Bold" size="38.0" />
-                     </font>
-                  </Label>
                   <TextFlow layoutX="624.0" layoutY="114.0" style="-fx-background-color: #23b883; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="120.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="152.0" prefWidth="613.0" text="Made with love by ESI Sba students" textAlignment="JUSTIFY" textFill="WHITE">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
+                        <VBox alignment="TOP_CENTER" prefHeight="356.0" prefWidth="569.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="118.0" prefWidth="223.0" text="Credits" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="38.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="569.0" text="Made with love by ESI Sba students" textAlignment="JUSTIFY" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="128.0" prefHeight="107.0" prefWidth="569.0" text="Under the supervision of Mr. Keskes." textAlignment="JUSTIFY" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                      <padding>
-                        <Insets left="150.0" />
+                        <Insets left="175.0" />
                      </padding>
                   </TextFlow>
                     </children>

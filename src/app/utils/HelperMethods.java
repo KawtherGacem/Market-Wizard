@@ -41,15 +41,28 @@ public class HelperMethods {
         return window;
     }
 
-    public static void emptyFieldsAlert(Stage window){
+    public static void invalidFieldsAlert(Stage window){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setContentText(String.valueOf("infoMessage"));
-        alert.setTitle("title");
-        alert.setHeaderText("fill in all the gaps you idiot");
+        alert.setContentText(String.valueOf("Please enter valid input"));
+        alert.setTitle("Invalid Input Error");
+        alert.setHeaderText("Invalid or missing input!");
         alert.initOwner(window);
         alert.showAndWait();
     }
 
+    public static boolean isNumeric(String s){
+        try{
+            Double.parseDouble(s);
+            return true;
+        }
+        catch (NumberFormatException e){
+            return false;
+        }
+    }
+
+    public static boolean isAlpha(String s) {
+        return s.matches("[a-zA-Z]+");
+    }
 
 
 }

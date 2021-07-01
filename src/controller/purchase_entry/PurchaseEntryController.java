@@ -276,7 +276,7 @@ public class PurchaseEntryController implements Initializable {
             Invoice invoice;
 
             while(rs.next()){
-                invoice = new Invoice(rs.getInt("id"),
+                invoice = new Invoice(rs.getInt("invoice_id"),
                         rs.getString("supplier"),
                         rs.getString("date_of_purchase"));
 

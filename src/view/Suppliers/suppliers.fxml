@@ -24,15 +24,15 @@
             <center>
             <AnchorPane minHeight="625.0" minWidth="1168.0" prefHeight="625.0" prefWidth="1240.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" fx:id="x">
                 <children>
-                    <TableView layoutX="82.0" layoutY="119.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="415.0" prefWidth="1076.0" style="-fx-border-color: #23B883; -fx-table-cell-border-color: #23B883; -fx-cell-size: 36.5; -fx-background-color: #EBEBEB;" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="107.0">
+                    <TableView fx:id="suppliersTableView" layoutX="82.0" layoutY="119.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="415.0" prefWidth="1076.0" style="-fx-border-color: #23B883; -fx-table-cell-border-color: #23B883; -fx-cell-size: 36.5; -fx-background-color: #EBEBEB;" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="107.0">
                         <columns>
-                            <TableColumn prefWidth="217.33331298828125" style="-fx-font-size: 19;" text="Supplier" />
-                            <TableColumn prefWidth="187.333251953125" style="-fx-font-size: 19;" text="Number " />
-                            <TableColumn prefWidth="131.666748046875" style="-fx-font-size: 19;" text="Adress" />
-                            <TableColumn prefWidth="113.3333740234375" style="-fx-font-size: 19;" text="Reg Com" />
-                            <TableColumn prefWidth="130.0" style="-fx-font-size: 19;" text="NIF" />
-                            <TableColumn prefWidth="114.0" style="-fx-font-size: 19;" text="NIS" />
-                            <TableColumn prefWidth="183.0" style="-fx-font-size: 19;" text="N° Article" />
+                            <TableColumn fx:id="idCol" prefWidth="68.66668701171875" style="-fx-font-size: 19;" text="Id" />
+                            <TableColumn fx:id="supplierNameCol" prefWidth="282.0" style="-fx-font-size: 19;" text="Supplier's name" />
+                            <TableColumn fx:id="phoneNumberCol" prefWidth="182.6666259765625" style="-fx-font-size: 19;" text="Phone number" />
+                            <TableColumn fx:id="addressCol" prefWidth="168.0" style="-fx-font-size: 19;" text="Adresse" />
+                            <TableColumn fx:id="registryCol" prefWidth="122.0" style="-fx-font-size: 19;" text="Registry" />
+                        <TableColumn fx:id="nisCol" prefWidth="124.3333740234375" style="-fx-font-size: 19;" text="NIS" />
+                        <TableColumn fx:id="nifCol" prefWidth="127.6666259765625" style="-fx-font-size: 19;" text="NIF" />
                         </columns>
                     </TableView>
                     <Button layoutX="859.0" layoutY="906.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Add new supplier" textFill="WHITE" AnchorPane.leftAnchor="758.0" AnchorPane.rightAnchor="821.0" AnchorPane.topAnchor="879.0">
@@ -40,30 +40,9 @@
                             <Font size="19.0" />
                         </font>
                     </Button>
-                    <AnchorPane layoutX="125.0" layoutY="30.0" prefHeight="45.0" prefWidth="926.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="316.0" AnchorPane.topAnchor="30.0" />
-                    <HBox layoutX="84.0" layoutY="30.0" maxHeight="46.0" prefHeight="46.0" prefWidth="1004.0" spacing="50.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="30.0">
-                        <children>
-                        <TextField prefHeight="44.0" prefWidth="750.0" promptText="Search supplier" style="-fx-background-color: #EBEBEB; -fx-border-color: #23B883;">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </TextField>
-                            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Search" textFill="WHITE">
-                                <font>
-                                    <Font size="20.0" />
-                                </font>
-                                <HBox.margin>
-                                    <Insets />
-                                </HBox.margin>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                            </Button>
-                        </children>
-                    </HBox>
-                  <HBox layoutX="250.0" layoutY="500.0" prefHeight="46.0" prefWidth="1004.0" spacing="125.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="550.0">
+                  <HBox layoutX="250.0" layoutY="500.0" prefHeight="46.0" prefWidth="869.0" spacing="105.0" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="550.0">
                      <children>
-                          <Button maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Add new supplier" textFill="WHITE">
+                          <Button fx:id="newSupplierBtn" maxHeight="44.0" mnemonicParsing="false" onAction="#newSupplierOnClick" prefHeight="44.0" prefWidth="220.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="New supplier" textFill="WHITE">
                               <font>
                                   <Font size="20.0" />
                               </font>
@@ -74,7 +53,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                           </Button>
-                        <Button maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Edit supplier" textFill="WHITE">
+                        <Button fx:id="editSupplierBtn" maxHeight="44.0" mnemonicParsing="false" onAction="#editSupplierOnClick" prefHeight="44.0" prefWidth="220.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Edit supplier" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -85,7 +64,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button maxHeight="44.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Delete supplier" textFill="WHITE">
+                        <Button fx:id="deleteSupplierBtn" maxHeight="44.0" mnemonicParsing="false" onAction="#deleteSupplierOnClick" prefHeight="44.0" prefWidth="220.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 12.5;" text="Delete supplier" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -98,6 +77,11 @@
                         </Button>
                      </children>
                   </HBox>
+                  <TextField fx:id="searchTextField" layoutX="275.0" layoutY="29.0" prefHeight="44.0" prefWidth="700.0" promptText="Search supplier" style="-fx-background-color: #EBEBEB; -fx-border-color: #23B883;" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="29.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
                 </children>
                <BorderPane.margin>
                   <Insets left="-255.0" />
@@ -204,7 +188,7 @@
                     </BorderPane.margin></AnchorPane>
             </top>
             <left>
-                <AnchorPane fx:id="slider" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="655.0" prefWidth="295.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 0px 0px 100px 0px;" visible="false" BorderPane.alignment="BOTTOM_LEFT">
+                <AnchorPane fx:id="slider" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="655.0" prefWidth="295.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 0px 0px 100px 0px;" BorderPane.alignment="BOTTOM_LEFT">
                     <children>
                         <VBox layoutX="-2.0" layoutY="3.0" maxHeight="264.0" maxWidth="295.0" minHeight="200.0" prefHeight="264.0" prefWidth="295.0" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>

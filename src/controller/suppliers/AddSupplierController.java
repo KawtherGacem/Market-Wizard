@@ -1,4 +1,4 @@
-package controller.purchase_entry;
+package controller.suppliers;
 
 import app.utils.DBUtils;
 import app.utils.HelperMethods;
